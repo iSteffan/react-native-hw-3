@@ -47,7 +47,7 @@ export default function RegistrationScreen() {
             <View style={styles.formWrap}>
               <Text style={styles.title}>Увійти</Text>
 
-              <View style={styles.inputWrap}>
+              <View style={styles.inputWraper}>
                 <TextInput
                   value={state.email}
                   onChangeText={value => setState(prevState => ({ ...prevState, email: value }))}
@@ -119,16 +119,18 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'flex-end',
+
     height: '100%',
     width: '100%',
   },
   formWrap: {
-    backgroundColor: '#FFFFFF',
-    width: '100%',
     paddingHorizontal: 16,
+    paddingTop: 32,
+
+    width: '100%',
+    backgroundColor: '#FFFFFF',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
-    paddingTop: 32,
   },
   title: {
     marginBottom: 33,
@@ -141,46 +143,50 @@ const styles = StyleSheet.create({
     lineHeight: 35,
     letterSpacing: 1.6,
   },
-  inputWrap: {
+  inputWrapper: {
     flexDirection: 'column',
     gap: 16,
     marginBottom: 43,
   },
   image: {
     position: 'absolute',
-    width: '100%',
     top: 0,
+
+    width: '100%',
   },
   input: {
-    height: 45,
     padding: 15,
+
+    height: 45,
+    fontFamily: 'Roboto-Regular',
     borderWidth: 1,
     borderRadius: 8,
-    fontFamily: 'Roboto-Regular',
   },
   button: {
-    height: 51,
-    backgroundColor: '#FF6C00',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 100,
     marginBottom: 15,
+
+    height: 51,
+    backgroundColor: '#FF6C00',
+    borderRadius: 100,
   },
   buttonText: {
     color: '#FFFFFF',
+    fontFamily: 'Roboto-Regular',
     fontSize: 16,
     fontWeight: '400',
     lineHeight: 16,
-    fontFamily: 'Roboto-Regular',
   },
   logInText: {
+    marginBottom: 144,
+
+    fontFamily: 'Roboto-Regular',
     textAlign: 'center',
     color: '#1B4371',
     fontSize: 16,
     fontWeight: '400',
     lineHeight: 19,
-    fontFamily: 'Roboto-Regular',
-    marginBottom: 144,
   },
   toggleButton: {
     position: 'absolute',

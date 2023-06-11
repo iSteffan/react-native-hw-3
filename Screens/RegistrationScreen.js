@@ -53,7 +53,7 @@ export default function RegistrationScreen() {
               </View>
               <Text style={styles.title}>Реєстрація</Text>
 
-              <View style={styles.inputWrap}>
+              <View style={styles.inputWrapper}>
                 <TextInput
                   value={state.login}
                   onChangeText={value => setState(prevState => ({ ...prevState, login: value }))}
@@ -142,26 +142,27 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'flex-end',
+
     height: '100%',
     width: '100%',
   },
   formWrap: {
+    paddingHorizontal: 16,
+    paddingTop: 92,
+
     backgroundColor: '#FFFFFF',
     width: '100%',
-    paddingHorizontal: 16,
-    // paddingLeft: 20,
-    // paddingRight: 20,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
-    paddingTop: 92,
   },
   avatar: {
-    width: 110,
-    height: 110,
-    backgroundColor: '#F6F6F6',
     position: 'absolute',
     top: -50,
     left: 150,
+
+    width: 110,
+    height: 110,
+    backgroundColor: '#F6F6F6',
     borderRadius: 16,
   },
   avatarButton: {
@@ -170,6 +171,8 @@ const styles = StyleSheet.create({
     bottom: 10,
   },
   title: {
+    marginBottom: 33,
+
     fontFamily: 'Roboto-Medium',
     textAlign: 'center',
     color: '#212121',
@@ -177,49 +180,50 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 35,
     letterSpacing: 1.6,
-    marginBottom: 33,
   },
-  inputWrap: {
+  inputWrapper: {
     flexDirection: 'column',
     marginBottom: 43,
   },
   image: {
     position: 'absolute',
-    width: '100%',
     top: 0,
+
+    width: '100%',
   },
   input: {
-    height: 45,
     padding: 15,
-    borderWidth: 1,
-    // backgroundColor: "#F6F6F6",
-    // borderColor: "#E8E8E8",
-    borderRadius: 8,
+
     fontFamily: 'Roboto-Regular',
+    height: 45,
+    borderWidth: 1,
+    borderRadius: 8,
   },
   button: {
-    height: 51,
-    backgroundColor: '#FF6C00',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 100,
     marginBottom: 16,
+
+    height: 51,
+    backgroundColor: '#FF6C00',
+    borderRadius: 100,
   },
   buttonText: {
+    fontFamily: 'Roboto-Regular',
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight: '400',
     lineHeight: 16,
-    fontFamily: 'Roboto-Regular',
   },
   logInText: {
     textAlign: 'center',
+    marginBottom: 78,
+
+    fontFamily: 'Roboto-Regular',
     color: '#1B4371',
     fontSize: 16,
     fontWeight: '400',
     lineHeight: 19,
-    fontFamily: 'Roboto-Regular',
-    marginBottom: 78,
   },
   toggleButton: {
     position: 'absolute',
