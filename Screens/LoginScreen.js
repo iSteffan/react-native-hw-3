@@ -21,14 +21,14 @@ const initialState = {
 
 export default function RegistrationScreen() {
   const [state, setState] = useState(initialState);
-  const [isShowKeyboard, setIsShowKeyboard] = useState(false);
+  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
 
-  const [isEmailFocus, setIsEmailFocus] = useState(false);
-  const [isPasswordFocus, setIsPasswordFocus] = useState(false);
+  const [isEmailFocused, setIsEmailFocused] = useState(false);
+  const [isPasswordFocused, setIsPasswordFocused] = useState(false);
   const [isPasswordHidden, setIsPasswordHidden] = useState(false);
 
   const keyboardHide = () => {
-    setIsShowKeyboard(false);
+    setIsKeyboardVisible(false);
     Keyboard.dismiss();
   };
 
@@ -55,15 +55,15 @@ export default function RegistrationScreen() {
                   placeholderTextColor={'#BDBDBD'}
                   style={{
                     ...styles.input,
-                    borderColor: isEmailFocus ? '#ff6c00' : '#e8e8e8',
-                    backgroundColor: isEmailFocus ? '#fff' : '#f6f6f6',
+                    borderColor: isEmailFocused ? '#ff6c00' : '#e8e8e8',
+                    backgroundColor: isEmailFocused ? '#fff' : '#f6f6f6',
                     marginBottom: 16,
                   }}
                   onFocus={() => {
-                    setIsShowKeyboard(true);
-                    setIsEmailFocus(true);
+                    setIsKeyboardVisible(true);
+                    setIsEmailFocused(true);
                   }}
-                  onBlur={() => setIsEmailFocus(false)}
+                  onBlur={() => setIsEmailFocused(false)}
                 />
                 <View style={{ position: 'relative' }}>
                   <TextInput
@@ -79,14 +79,14 @@ export default function RegistrationScreen() {
                     secureTextEntry={isPasswordHidden}
                     style={{
                       ...styles.input,
-                      borderColor: isPasswordFocus ? '#ff6c00' : '#e8e8e8',
-                      backgroundColor: isPasswordFocus ? '#fff' : '#f6f6f6',
+                      borderColor: isPasswordFocused ? '#ff6c00' : '#e8e8e8',
+                      backgroundColor: isPasswordFocused ? '#fff' : '#f6f6f6',
                     }}
                     onFocus={() => {
-                      setIsShowKeyboard(true);
+                      setIsKeyboardVisible(true);
                       setIsPasswordFocus(true);
                     }}
-                    onBlur={() => setIsPasswordFocus(false)}
+                    onBlur={() => setIsPasswordFocused(false)}
                   />
                   <Pressable
                     onPress={() => setIsPasswordHidden(prevState => !prevState)}
