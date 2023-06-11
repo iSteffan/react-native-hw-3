@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   StyleSheet,
   View,
@@ -10,13 +10,13 @@ import {
   Text,
   Pressable,
   Image,
-} from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+} from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
 const initialState = {
-  login: "",
-  email: "",
-  password: "",
+  login: '',
+  email: '',
+  password: '',
 };
 
 export default function RegistrationScreen() {
@@ -42,33 +42,28 @@ export default function RegistrationScreen() {
   return (
     <TouchableWithoutFeedback onPress={keyboardHide}>
       <View>
-        <KeyboardAvoidingView behavior={Platform.OS === "ios" && "padding"}>
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' && 'padding'}>
           <View style={styles.container}>
-            <Image
-              source={require("../assets/images/screenBg.png")}
-              style={styles.image}
-            />
+            <Image source={require('../assets/images/photo-bg.jpg')} style={styles.image} />
             <View style={styles.formWrap}>
               <View style={styles.avatar}>
                 <Pressable style={styles.avatarButton}>
                   <AntDesign name="pluscircleo" size={24} color="#FF6C00" />
                 </Pressable>
               </View>
-              <Text style={styles.title}>Регистрация</Text>
+              <Text style={styles.title}>Реєстрація</Text>
 
               <View style={styles.inputWrap}>
                 <TextInput
                   value={state.login}
-                  onChangeText={(value) =>
-                    setState((prevState) => ({ ...prevState, login: value }))
-                  }
-                  placeholder="Логин"
-                  placeholderTextColor={"#BDBDBD"}
+                  onChangeText={value => setState(prevState => ({ ...prevState, login: value }))}
+                  placeholder="Логін"
+                  placeholderTextColor={'#BDBDBD'}
                   style={{
                     ...styles.input,
-                    borderColor: isLoginFocus ? "#ff6c00" : "#e8e8e8",
-                    backgroundColor: isLoginFocus ? "#fff" : "#f6f6f6",
-                    marginBottom: 10,
+                    borderColor: isLoginFocus ? '#ff6c00' : '#e8e8e8',
+                    backgroundColor: isLoginFocus ? '#fff' : '#f6f6f6',
+                    marginBottom: 16,
                   }}
                   onFocus={() => {
                     setIsShowKeyboard(true);
@@ -78,16 +73,14 @@ export default function RegistrationScreen() {
                 />
                 <TextInput
                   value={state.email}
-                  onChangeText={(value) =>
-                    setState((prevState) => ({ ...prevState, email: value }))
-                  }
-                  placeholder="Адрес электронной почты"
-                  placeholderTextColor={"#BDBDBD"}
+                  onChangeText={value => setState(prevState => ({ ...prevState, email: value }))}
+                  placeholder="Адреса електронної пошти"
+                  placeholderTextColor={'#BDBDBD'}
                   style={{
                     ...styles.input,
-                    borderColor: isEmailFocus ? "#ff6c00" : "#e8e8e8",
-                    backgroundColor: isEmailFocus ? "#fff" : "#f6f6f6",
-                    marginBottom: 10,
+                    borderColor: isEmailFocus ? '#ff6c00' : '#e8e8e8',
+                    backgroundColor: isEmailFocus ? '#fff' : '#f6f6f6',
+                    marginBottom: 16,
                   }}
                   onFocus={() => {
                     setIsShowKeyboard(true);
@@ -95,22 +88,22 @@ export default function RegistrationScreen() {
                   }}
                   onBlur={() => setIsEmailFocus(false)}
                 />
-                <View style={{ position: "relative" }}>
+                <View style={{ position: 'relative' }}>
                   <TextInput
                     value={state.password}
-                    onChangeText={(value) =>
-                      setState((prevState) => ({
+                    onChangeText={value =>
+                      setState(prevState => ({
                         ...prevState,
                         password: value,
                       }))
                     }
                     placeholder="Пароль"
-                    placeholderTextColor={"#BDBDBD"}
+                    placeholderTextColor={'#BDBDBD'}
                     secureTextEntry={isPasswordHidden}
                     style={{
                       ...styles.input,
-                      borderColor: isPasswordFocus ? "#ff6c00" : "#e8e8e8",
-                      backgroundColor: isPasswordFocus ? "#fff" : "#f6f6f6",
+                      borderColor: isPasswordFocus ? '#ff6c00' : '#e8e8e8',
+                      backgroundColor: isPasswordFocus ? '#fff' : '#f6f6f6',
                     }}
                     onFocus={() => {
                       setIsShowKeyboard(true);
@@ -119,13 +112,11 @@ export default function RegistrationScreen() {
                     onBlur={() => setIsPasswordFocus(false)}
                   />
                   <Pressable
-                    onPress={() =>
-                      setIsPasswordHidden((prevState) => !prevState)
-                    }
+                    onPress={() => setIsPasswordHidden(prevState => !prevState)}
                     style={styles.toggleButton}
                   >
                     <Text style={styles.toggleText}>
-                      {isPasswordHidden ? "Показать" : "Скрыть"}
+                      {isPasswordHidden ? 'Показати' : 'Сховати'}
                     </Text>
                   </Pressable>
                 </View>
@@ -134,9 +125,9 @@ export default function RegistrationScreen() {
               {!isShowKeyboard && (
                 <View>
                   <Pressable onPress={handleSubmit} style={styles.button}>
-                    <Text style={styles.buttonText}>Зарегистрироваться</Text>
+                    <Text style={styles.buttonText}>Зареєстуватися</Text>
                   </Pressable>
-                  <Text style={styles.logInText}>Уже есть аккаунт? Войти</Text>
+                  <Text style={styles.logInText}>Вже є акаунт? Увійти</Text>
                 </View>
               )}
             </View>
@@ -149,53 +140,52 @@ export default function RegistrationScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
-    justifyContent: "flex-end",
-    height: "100%",
-    width: "100%",
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    height: '100%',
+    width: '100%',
   },
   formWrap: {
-    backgroundColor: "#FFFFFF",
-    width: "100%",
-    paddingHorizontal: 20,
+    backgroundColor: '#FFFFFF',
+    width: '100%',
+    paddingHorizontal: 16,
     // paddingLeft: 20,
     // paddingRight: 20,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
-    paddingTop: 70,
+    paddingTop: 92,
   },
   avatar: {
     width: 110,
     height: 110,
-    backgroundColor: "#F6F6F6",
-    position: "absolute",
+    backgroundColor: '#F6F6F6',
+    position: 'absolute',
     top: -50,
     left: 150,
     borderRadius: 16,
   },
   avatarButton: {
-    position: "absolute",
+    position: 'absolute',
     right: -12,
     bottom: 10,
   },
   title: {
-    fontFamily: "Roboto-Medium",
-    textAlign: "center",
-    color: "#212121",
+    fontFamily: 'Roboto-Medium',
+    textAlign: 'center',
+    color: '#212121',
     fontSize: 30,
-    fontWeight: "500",
+    fontWeight: '500',
     lineHeight: 35,
     letterSpacing: 1.6,
-    marginBottom: 20,
+    marginBottom: 33,
   },
   inputWrap: {
-    flexDirection: "column",
-    // gap: 10,
-    marginBottom: 20,
+    flexDirection: 'column',
+    marginBottom: 43,
   },
   image: {
-    position: "absolute",
-    width: "100%",
+    position: 'absolute',
+    width: '100%',
     top: 0,
   },
   input: {
@@ -205,40 +195,40 @@ const styles = StyleSheet.create({
     // backgroundColor: "#F6F6F6",
     // borderColor: "#E8E8E8",
     borderRadius: 8,
-    fontFamily: "Roboto-Regular",
+    fontFamily: 'Roboto-Regular',
   },
   button: {
     height: 51,
-    backgroundColor: "#FF6C00",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#FF6C00',
+    alignItems: 'center',
+    justifyContent: 'center',
     borderRadius: 100,
-    marginBottom: 15,
+    marginBottom: 16,
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: '#FFFFFF',
     fontSize: 16,
-    fontWeight: "400",
+    fontWeight: '400',
     lineHeight: 16,
-    fontFamily: "Roboto-Regular",
+    fontFamily: 'Roboto-Regular',
   },
   logInText: {
-    textAlign: "center",
-    color: "#1B4371",
+    textAlign: 'center',
+    color: '#1B4371',
     fontSize: 16,
-    fontWeight: "400",
+    fontWeight: '400',
     lineHeight: 19,
-    fontFamily: "Roboto-Regular",
-    marginBottom: 50,
+    fontFamily: 'Roboto-Regular',
+    marginBottom: 78,
   },
   toggleButton: {
-    position: "absolute",
+    position: 'absolute',
     top: 12,
     right: 20,
   },
   toggleText: {
-    color: "#1B4371",
-    fontFamily: "Roboto-Regular",
+    color: '#1B4371',
+    fontFamily: 'Roboto-Regular',
     lineHeight: 19,
   },
 });
